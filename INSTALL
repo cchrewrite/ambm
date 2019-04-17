@@ -1,3 +1,10 @@
+# Install ProB 1.7.1
+# See https://www3.hhu.de/stups/prob/index.php/Download
+
+# Install Silas Edu 0.8.5
+# See https://www.depintel.com/documentation/_build/html/index.html
+
+# Install Python
 sudo python -m pip install --upgrade pip
 sudo apt-get install python-pip
 sudo pip install graphviz
@@ -25,7 +32,10 @@ sudo pip install -U scikit-learn
 # Install NLTK
 sudo pip install nltk
 
+# Install SWI-prolog
+sudo apt-get install swi-prolog
+
 # Install aleph:
 # Open swipl
-# pack_install(aleph).
+# type "pack_install(aleph)."
 
