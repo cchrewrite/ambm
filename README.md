@@ -13,19 +13,52 @@ Due to the double-blind peer review process, authors' names are hidden.
 ### Part I: Semantics Learning
 To reproduce Part I of the experiments in the paper, run:
 
-cd ambm_ver_0.1.0
 python src/python/experiments_semantics_learning.py
 
-Results can be found in ambm_ver_0.1.0/Experiments/semantics_learning_results/log/
+Results can be found in Experiments/semantics_learning_results/log/
 
 ### Part II: Abstract Machine Modification
 To reproduce Part II of the experiments in the paper, run:
 
-cd ambm_ver_0.1.0
 python src/python/experiments_abstract_machine_modification.py
 
-Results can be found in ambm_ver_0.1.0/Experiments/abstract_machine_modification_results/log/
+Results can be found in Experiments/abstract_machine_modification_results/log/
 
+## Technical Details
+
+### Algorithm 1: Abstract Machine Batch Modification
+
+The implementation of this algorithm is:
+
+src/python/abstract_machine_batch_modification.py
+
+#### Critical functions include:
+##### "State-Diagram(M)":
+It is a function of the ProB model checker.
+
+##### "Semantics-Learning(M)":
+It is implemented as "SemLearnLib.TrainingSemanticsModel(M,conffile,sdir)"
+
+##### "SMT-Samples(M,N)":
+It is implemented as "SemLearnLib.MonteCarloStateSampling(M,W,conffile,mcdir)"
+
+#### "Faulty-Transitions(D)":
+It is a function of the ProB model checker.
+
+#### "Correct-States(D)":
+It is a function of the ProB model checker.
+
+#### "Atomic-Modifications(T,S)":
+It is implemented as "Bmch.RevisionSynthesis(TF,SREV)"
+
+#### "Semantics-Probability(R,W)":
+It is implemented as "SemLearnLib.ScoreRevisionsUsingSemanticsModel(W,RREV,revdir)"
+
+#### "Update(M,R)":
+It is implemented as "Bmch.apply_A_change(mch,op,cond,subs)"
+
+#### "Reconstitution(R)":
+It is implemented as "RepSimpLib.CFGRepairSimplification(RS,TL,VList,conffile,cgfdir)"
 
 
 
