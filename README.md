@@ -30,7 +30,7 @@ Results can be found in Experiments/abstract_machine_modification_results/log/
 
 The implementation of this algorithm is:
 
-src/python/abstract_machine_batch_modification.py
+#### src/python/abstract_machine_batch_modification.py
 
 #### Critical functions include:
 ##### "State-Diagram(M)":
@@ -62,3 +62,18 @@ It is implemented as "RepSimpLib.CFGRepairSimplification(RS,TL,VList,conffile,cg
 
 
 
+### Algorithm 2: Modification Reconstitution
+
+The implementation of this algorithm is:
+
+#### "CFGRepairSimplification" in src/python/RepSimpLib.py
+
+#### Critical functions include:
+##### " Modifications-To-Predicates(M)", "CFG-Predicates(M,D)" and "Candidate-Predicates(X,P)":
+The three functions are implemented as "CFG_Substitution_Generator(TL,VL,conffile,sdir)".
+
+##### "Best-Partition(X,W)"
+It is implemented as "transition_partition(TL,VL,Y)"
+
+##### "Predicates-To-Modifications(X)"
+It is implemented as "convert_CFG_subs_to_str(SC[0])" and "convert_pexp_to_cond(pexp,VL)"
