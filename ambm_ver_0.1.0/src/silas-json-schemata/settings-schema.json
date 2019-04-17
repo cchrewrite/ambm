@@ -1,0 +1,234 @@
+{
+    "$id": "https://www.depintel.com/documentation/json-schemata/settings-schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Machine Learning Settings",
+    "type": "object",
+    "oneOf": [
+        {
+            "required": [ "outcome_feature", "metadata_file", "number_of_trees", "max_depth", "desired_leaf_size", "number_of_outcome_subintervals", "selected_features", "feature_proportion", "sampling_method", "sampling_proportion", "oob_proportion", "validation_method", "cv_settings" ],
+            "properties": {
+                "outcome_feature": { "type": "string" }, 
+                "metadata_file": { "type": "string" }, 
+                "number_of_trees": {
+                    "type": "integer",
+                    "minimum": 0
+                }, 
+                "max_depth": {
+                    "type": "integer",
+                    "minimum": 0     
+                }, 
+                "desired_leaf_size": {
+                    "type": "integer",
+                    "minimum": 0     
+                }, 
+                "number_of_outcome_subintervals": {
+                    "type": "integer",
+                    "minimum": 0     
+                }, 
+                "selected_features": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                }, 
+                "feature_proportion": { "enum": [ "sqrt", "log", "log2", "golden" ] }, 
+                "sampling_method": { "enum": [ "balancing", "uniform" ] }, 
+                "sampling_proportion": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
+                }, 
+                "oob_proportion": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
+                }, 
+                "validation_method": { "enum": [ "CV" ] },
+                "cv_settings": {
+                    "type": "object",
+                    "required": [ "dataset_file", "number_of_runs", "number_of_cross_validation_partitions" ],
+                    "properties": {
+                        "dataset_file": {
+                            "type": "string"
+                        }, 
+                        "number_of_runs": {
+                            "type": "integer",
+                            "minimum": 0
+                        }, 
+                        "number_of_cross_validation_partitions": {
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "required": [ "outcome_feature", "metadata_file", "number_of_trees", "max_depth", "desired_leaf_size", "number_of_outcome_subintervals", "selected_features", "feature_proportion", "sampling_method", "sampling_proportion", "oob_proportion", "validation_method", "cv_settings" ],
+            "properties": {
+                "outcome_feature": { "type": "string" }, 
+                "metadata_file": { "type": "string" }, 
+                "number_of_trees": {
+                    "type": "integer",
+                    "minimum": 0
+                }, 
+                "max_depth": {
+                    "type": "integer",
+                    "minimum": 0     
+                }, 
+                "desired_leaf_size": {
+                    "type": "integer",
+                    "minimum": 0     
+                }, 
+                "number_of_outcome_subintervals": {
+                    "type": "integer",
+                    "minimum": 0     
+                }, 
+                "selected_features": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                }, 
+                "feature_proportion": { 
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
+                }, 
+                "sampling_method": { "enum": [ "balancing", "uniform" ] }, 
+                "sampling_proportion": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
+                }, 
+                "oob_proportion": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
+                }, 
+                "validation_method": { "enum": [ "CV" ] },
+                "cv_settings": {
+                    "type": "object",
+                    "required": [ "dataset_file", "number_of_runs", "number_of_cross_validation_partitions" ],
+                    "properties": {
+                        "dataset_file": {
+                            "type": "string"
+                        }, 
+                        "number_of_runs": {
+                            "type": "integer",
+                            "minimum": 0
+                        }, 
+                        "number_of_cross_validation_partitions": {
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "required": [ "outcome_feature", "metadata_file", "number_of_trees", "max_depth", "desired_leaf_size", "number_of_outcome_subintervals", "selected_features", "feature_proportion", "sampling_method", "sampling_proportion", "oob_proportion", "validation_method", "tt_settings" ],
+            "properties": {
+                "outcome_feature": { "type": "string" }, 
+                "metadata_file": { "type": "string" }, 
+                "number_of_trees": {
+                    "type": "integer",
+                    "minimum": 0
+                }, 
+                "max_depth": {
+                    "type": "integer",
+                    "minimum": 0     
+                }, 
+                "desired_leaf_size": {
+                    "type": "integer",
+                    "minimum": 0     
+                }, 
+                "number_of_outcome_subintervals": {
+                    "type": "integer",
+                    "minimum": 0     
+                }, 
+                "selected_features": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                }, 
+                "feature_proportion": { "enum": [ "sqrt" ] },
+                "sampling_method": { "enum": [ "balancing", "uniform" ] }, 
+                "sampling_proportion": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
+                }, 
+                "oob_proportion": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
+                }, 
+                "validation_method": { "enum": [ "TT" ] },
+                "tt_settings": {
+                    "type": "object",
+                    "required": [ "training_dataset_file", "testing_dataset_file" ],
+                    "properties": {
+                        "training_dataset_file": {
+                            "type": "string"
+                        }, 
+                        "testing_dataset_file": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "required": [ "outcome_feature", "metadata_file", "number_of_trees", "max_depth", "desired_leaf_size", "number_of_outcome_subintervals", "selected_features", "feature_proportion", "sampling_method", "sampling_proportion", "oob_proportion", "validation_method", "tt_settings" ],
+            "properties": {
+                "outcome_feature": { "type": "string" }, 
+                "metadata_file": { "type": "string" }, 
+                "number_of_trees": {
+                    "type": "integer",
+                    "minimum": 0
+                }, 
+                "max_depth": {
+                    "type": "integer",
+                    "minimum": 0     
+                }, 
+                "desired_leaf_size": {
+                    "type": "integer",
+                    "minimum": 0     
+                }, 
+                "number_of_outcome_subintervals": {
+                    "type": "integer",
+                    "minimum": 0     
+                }, 
+                "selected_features": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                }, 
+                "feature_proportion": { 
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0        
+                }, 
+                "sampling_method": { "enum": [ "balancing", "uniform" ] }, 
+                "sampling_proportion": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
+                }, 
+                "oob_proportion": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0
+                }, 
+                "validation_method": { "enum": [ "TT" ] },
+                "tt_settings": {
+                    "type": "object",
+                    "required": [ "training_dataset_file", "testing_dataset_file" ],
+                    "properties": {
+                        "training_dataset_file": {
+                            "type": "string"
+                        }, 
+                        "testing_dataset_file": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
