@@ -1,0 +1,21 @@
+max_initialisations = 1024
+max_operations = 1024
+
+# ======= Learning Module Parameters =======
+additional_sampling = False
+max_num_sampling_states = 204800
+max_operations = 1024
+rd_seed = 777
+neg_prop = 1.0
+cv_prop = 0.2
+tendency_model = RF
+
+# ======= RF Section =======
+rf_num_tree = -1
+rf_min_imp_exp = -7
+rf_max_imp_exp = -2
+rf_neg_prop = 2.0
+
+
+
+
