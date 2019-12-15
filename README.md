@@ -2,7 +2,7 @@
 
 This repository contains the source code of the Abstract Machine Batch Modification algorithm. It is built to support the review of the paper: 
 #### Automated Abstract Machine Modification Using Semantic Probabilities and Predicate Reconstitution
-Due to the double-blind peer review process, authors' names are hidden.
+by Cheng-Hao Cai, Jing Sun, Gillian Dobbie, Zhé Hóu, Hadrien Bride, Jin Song Dong, and Scott Uk-Jin Lee
 
 ## Section 1: Installation
 1. Install Ubuntu 16.04. See http://releases.ubuntu.com/16.04/
