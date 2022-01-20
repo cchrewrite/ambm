@@ -1,0 +1,89 @@
+{
+    "$id": "https://www.depintel.com/documentation/json-schemata/metadata-schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Metadata",
+    "required": [ "feature_types", "features", "arithmetic_compound_features" ],
+    "type": "object",
+    "properties": {
+        "feature_types": {
+            "type": "array",
+            "items": { 
+                "type": "object",
+                "oneOf": [
+                    {
+                        "required": [ "super_type", "name", "number_definition" ],
+                        "properties": {
+                            "super_type": { "enum": ["number"] },
+                            "name": { "type": "string" },
+                            "number_definition": {
+                                "type": "object",
+                                "required": [ "min", "max" ],
+                                "properties": {
+                                    "min": { "type": "number" },
+                                    "max": { "type": "number" }
+                                }
+                            }           
+                        }
+                    },
+                    {
+                        "required": [ "super_type", "name", "enumeration_definition" ],
+                        "properties": {
+                            "super_type": { "enum": ["enumeration"] },
+                            "name": { "type": "string" },
+                            "enumeration_definition": {
+                                "type": "object",
+                                "required": [ "min", "max", "value_map" ],
+                                "properties": {
+                                    "min": { "type": "number" },
+                                    "max": { "type": "number" },
+                                    "value_map": { "type": "object" }
+                                }
+                            }        
+                        }
+                    },
+                    {
+                        "required": [ "super_type", "name", "collection_definition" ],
+                        "properties": {
+                            "super_type": { "enum": ["collection"] },
+                            "name": { "type": "string" },
+                            "collection_definition": {
+                                "type": "array",
+                                "items": { "type": "string" }
+                            }        
+                        }
+                    }
+                ]                
+            }
+        },
+        "features": {
+            "type": "array",
+            "items": { 
+                "type": "object",
+                "required": [ "name", "type" ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "arithmetic_compound_features": {
+            "type": "array",
+            "items": {  
+                "type": "object",
+                "required": [ "name", "surrogate_term" ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "surrogate_term": {
+                        "$ref": "arithmetic-term-schema.json#/definitions/term"
+                    }
+                }
+            }
+        }
+    }
+}
