@@ -1,0 +1,23 @@
+max_initialisations = 1024
+max_operations = 1024
+
+# ======= Learning Module Parameters =======
+additional_sampling = False
+max_num_sampling_states = 204800
+max_operations = 1024
+rd_seed = 777
+neg_prop = 1.0
+cv_prop = 0.01
+tendency_model = RF
+
+# ======= Repair Module Parameters =======
+num_displayed_repairs = 4
+mcss_max_num_samples = 10000
+apply_CFG_simplification = True
+max_CFG_length = 5
+max_CFG_set_cardinality = 5
+max_num_repair_epochs = 10
+
+# =======RF Section =======
+rf_num_tree = -1
+

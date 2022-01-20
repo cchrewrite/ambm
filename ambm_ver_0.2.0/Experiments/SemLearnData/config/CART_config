@@ -1,0 +1,22 @@
+max_initialisations = 1024
+max_operations = 1024
+
+# ======= Learning Module Parameters =======
+additional_sampling = False
+max_num_sampling_states = 204800
+max_operations = 1024
+rd_seed = 777
+neg_prop = 1.0
+cv_prop = 0.2
+tendency_model = CART
+
+# ======= RF Section =======
+cart_num_tree = 10
+cart_min_var_exp = -7
+cart_max_var_exp = -2
+cart_data_prop = 1.0
+cart_use_mp = False
+
+
+
+

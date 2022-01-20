@@ -1,0 +1,47 @@
+max_initialisations = 1024
+max_operations = 1024
+
+# ======= Learning Module Parameters =======
+additional_sampling = False
+max_num_sampling_states = 204800
+max_operations = 1024
+rd_seed = 777
+neg_prop = 1.0
+cv_prop = 0.2
+#tendency_model = Silas
+tendency_model = SKCART
+
+# ======= Repair Module Parameters =======
+num_displayed_repairs = 4
+mcss_max_num_samples = 1000
+apply_CFG_simplification = True
+max_CFG_length = 4
+max_CFG_set_cardinality = 5
+
+# ======= Logistic Section =======
+logistic_max_epochs = 5000
+logistic_lrate = 0.004
+logistic_minibatch_size = 1024
+
+# ======= ResNet Section =======
+resnet_max_epochs = 10000
+resnet_lrate = 0.004
+resnet_minibatch_size = 1024
+resnet_num_hid = 128
+resnet_num_layers = 5
+
+# ======== BNBayers Section =======
+bnb_neg_prop = 2.0
+
+# ======= SKCART Section =======
+skcart_num_tree = 1024
+skcart_min_imp_exp = -7
+skcart_max_imp_exp = -2
+skcart_neg_prop = 2.0
+
+# ======= Silas Section =======
+silas_num_tree = 1024
+
+
+# 
+
